@@ -11,7 +11,6 @@ class DeckTest {
     @Test
     fun allCardsInDeckAndOnlyOnce() {
         val deck = Deck()
-        deck.deck.push(Card(Suit.DIAMOND, 1))
 
         Assertions.assertTrue(deck.deck.groupBy { it.suit }.all { entry -> entry.value.size == 13 })
         Assertions.assertTrue(deck.deck.groupBy { it.numericValue }.all { entry -> entry.value.size == 4 })
